@@ -17,9 +17,9 @@ A full-stack Employee Management System built using **Angular 17**, **Spring Boo
 - Tools: Postman, GitHub
 
 ## 📂 Project Structure
-employee-management-system/
-├── backend/
-└── frontend/
+-employee-management-system/
+-├── backend/
+-└── frontend/
 
 
 ## ▶️ How to Run
