@@ -1,0 +1,48 @@
+<h2>Employee List</h2>
+<input
+  type="text"
+  placeholder="Search by name"
+  (input)="search($event)"
+/>
+
+<select (change)="filter($event)">
+  <option value="">All Departments</option>
+  <option value="IT">IT</option>
+  <option value="HR">HR</option>
+  <option value="Finance">Finance</option>
+</select>
+
+<br /><br />
+<table border="1" cellpadding="10">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Department</th>
+    <th>Role</th>
+    <th>Salary</th>
+    <th>Action</th>
+  </tr>
+
+  <tr *ngFor="let emp of employees">
+    <td>{{ emp.name }}</td>
+    <td>{{ emp.email }}</td>
+    <td>{{ emp.department }}</td>
+    <td>{{ emp.role }}</td>
+    <td>{{ emp.salary }}</td>
+    <td>
+      <button (click)="deleteEmployee(emp.id!)">Delete</button>
+    </td>
+  </tr>
+</table>
+
+<br />
+
+<button (click)="prevPage()" [disabled]="currentPage === 0">
+  Previous
+</button>
+
+<span> Page {{ currentPage + 1 }} of {{ totalPages }} </span>
+
+<button (click)="nextPage()" [disabled]="currentPage >= totalPages - 1">
+  Next
+</button>

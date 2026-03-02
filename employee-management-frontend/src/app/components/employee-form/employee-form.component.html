@@ -1,0 +1,86 @@
+<h3>Add Employee</h3>
+
+<form [formGroup]="employeeForm" (ngSubmit)="submit()">
+
+  <!-- Name -->
+  <input
+    type="text"
+    placeholder="Name"
+    formControlName="name"
+  />
+  <div *ngIf="employeeForm.get('name')?.touched 
+              && employeeForm.get('name')?.invalid"
+       style="color:red">
+    Name is required
+  </div>
+  <br />
+
+  <!-- Email -->
+  <input
+    type="email"
+    placeholder="Email"
+    formControlName="email"
+  />
+  <div *ngIf="employeeForm.get('email')?.touched 
+              && employeeForm.get('email')?.invalid"
+       style="color:red">
+    Valid email is required
+  </div>
+  <br />
+
+  <!-- Department -->
+  <input
+    type="text"
+    placeholder="Department"
+    formControlName="department"
+  />
+  <div *ngIf="employeeForm.get('department')?.touched 
+              && employeeForm.get('department')?.invalid"
+       style="color:red">
+    Department is required
+  </div>
+  <br />
+
+  <!-- Role -->
+  <input
+    type="text"
+    placeholder="Role"
+    formControlName="role"
+  />
+  <div *ngIf="employeeForm.get('role')?.touched 
+              && employeeForm.get('role')?.invalid"
+       style="color:red">
+    Role is required
+  </div>
+  <br />
+
+  <!-- Salary -->
+  <input
+    type="number"
+    placeholder="Salary"
+    formControlName="salary"
+  />
+  <div *ngIf="employeeForm.get('salary')?.touched 
+              && employeeForm.get('salary')?.invalid"
+       style="color:red">
+    Salary must be a positive number
+  </div>
+  <br />
+
+  <!-- Joining Date -->
+  <input
+    type="date"
+    formControlName="joiningDate"
+  />
+  <div *ngIf="employeeForm.get('joiningDate')?.touched 
+              && employeeForm.get('joiningDate')?.invalid"
+       style="color:red">
+    Joining date is required
+  </div>
+  <br /><br />
+
+  <button type="submit" [disabled]="employeeForm.invalid">
+    Add Employee
+  </button>
+
+</form>
